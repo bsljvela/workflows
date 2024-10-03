@@ -26,7 +26,7 @@ jobs:
         run: |
           git checkout main
           git fetch origin
-          git checkout build
+          git checkout -b build
           git pull
           git merge origin/main
           git push origin build
