@@ -27,6 +27,6 @@ jobs:
           git checkout main
           git fetch origin
           git checkout -b build
-          git pull
+          git pull origin build
           git merge origin/main
           git push origin build
