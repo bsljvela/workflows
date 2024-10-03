@@ -26,7 +26,11 @@ jobs:
         run: |
           git checkout main
           git fetch origin
-          git checkout -b build
-          git pull origin build
+          if git rev-parse --verify origin/build; then
+            git checkout build
+            git pull origin build
+          else
+            git checkout -b build
+          fi
           git merge origin/main
           git push origin build
